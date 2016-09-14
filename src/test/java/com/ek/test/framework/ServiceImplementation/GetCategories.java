@@ -2,31 +2,17 @@ package com.ek.test.framework.ServiceImplementation;
 
 import com.ek.test.framework.helpers.PropertyHelper;
 import com.ek.test.framework.hooks.ScenarioHook;
-import com.ek.test.framework.model.apiCategories.Children_data;
-import com.ek.test.framework.model.apiCategories.categories;
-import com.fasterxml.jackson.annotation.JacksonAnnotation;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
-import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.internal.LinkedTreeMap;
-import com.google.gson.internal.bind.JsonTreeReader;
-import com.jayway.restassured.internal.mapping.Jackson2Mapper;
-import com.jayway.restassured.mapper.factory.JAXBObjectMapperFactory;
+
 import com.jayway.restassured.response.Response;
 import com.jayway.restassured.specification.RequestSpecification;
-import org.json.simple.JSONObject;
 
-import javax.xml.bind.JAXBContext;
 
 import static com.jayway.restassured.RestAssured.given;
 
-/**
- * Created by Administrator on 9/11/2016.
- */
+
 public class GetCategories {
     private static Response response = null;
     private static JsonObject objResponseJson = null;

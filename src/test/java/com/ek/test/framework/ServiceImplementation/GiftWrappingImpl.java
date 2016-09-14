@@ -10,14 +10,14 @@ import com.google.gson.JsonParser;
 import com.jayway.restassured.response.Response;
 
 import com.jayway.restassured.specification.RequestSpecification;
-import com.magentoGift.Item;
+
 
 import java.util.*;
 
 import static com.jayway.restassured.RestAssured.given;
 
 public class GiftWrappingImpl {
-    private static Item item;
+
     private static Response response;
     private static JsonArray itemArrayObj = null;
     public static void callRESTAPIGiftWrapper(String header1, String header2, String header3, String header4) throws Exception {
