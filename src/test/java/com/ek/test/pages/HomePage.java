@@ -11,6 +11,8 @@ public class HomePage extends BasePage{
         try{
             WaitHelper.waitUntilClickable(getElement("SignInLink"));
             WebElementHelper.clickElement(getElement("SignInLink"));
+            WaitHelper.waitForPageLoad();
+            WaitHelper.waitForJStoLoad();
         }catch (Exception e){
             throw new Exception("ERROR: While Clicks on the Sign In Link");
         }

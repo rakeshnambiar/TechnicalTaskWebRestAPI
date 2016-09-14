@@ -9,6 +9,8 @@ import com.ek.test.framework.helpers.WebElementHelper;
 public class FaceBookPage extends BasePage{
     public void enterUserCredential(String userName, String password) throws Exception {
         try{
+            WaitHelper.waitForPageLoad();
+            WaitHelper.waitForJStoLoad();
             WebElementHelper.enterText(getElement("UserName"), userName);
             WebElementHelper.enterText(getElement("Password"), password);
         }catch (Exception e){

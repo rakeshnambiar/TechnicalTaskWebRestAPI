@@ -19,6 +19,8 @@ public class SearchPage extends BasePage{
     public void performItemSearch(String text) throws Exception {
         try{
             WebElementHelper.enterTextWithEnterKey(getElement("SearchField"),text,true);
+            WaitHelper.waitForPageLoad();
+            WaitHelper.waitForJStoLoad();
         }catch (Exception e){
             throw new Exception("ERROR: While Perform Search operation");
         }
@@ -41,6 +43,8 @@ public class SearchPage extends BasePage{
 
     public int getSearchResultCount() throws Exception {
         try{
+            WaitHelper.waitForJStoLoad();
+            WaitHelper.waitForPageLoad();
             List<WebElement> resultItem = getElements("ResultItem");
             return resultItem.size();
         }catch (Exception e){
@@ -51,6 +55,7 @@ public class SearchPage extends BasePage{
     public boolean isSearchResultPageDisplayed() throws Exception {
         try{
             WaitHelper.waitForJStoLoad();
+            WaitHelper.waitForPageLoad();
             return WebElementHelper.isElementDisplayed(getElement("ResultHeader"));
         }catch (Exception e){
             throw new Exception("ERROR: While Verifying the Search Result Page availability");
@@ -108,6 +113,8 @@ public class SearchPage extends BasePage{
 
     public void scrollDownSearchResultPage() throws Exception {
         try{
+            WaitHelper.waitForPageLoad();
+            WaitHelper.waitForJStoLoad();
             WebElement footerElement = getElement("NewsLetter");
             new Actions(PageFactory.getDriver()).moveToElement(footerElement).click().perform();
             new Actions(PageFactory.getDriver()).moveToElement(footerElement).click().perform();
@@ -134,9 +141,13 @@ public class SearchPage extends BasePage{
 
     public void selectFirstItem() throws Exception {
         try{
+            WaitHelper.waitForPageLoad();
+            WaitHelper.waitForJStoLoad();
             List<WebElement> resultItem = getElements("ResultItem");
             if(resultItem.size() > 0){
                 WebElementHelper.clickElement(resultItem.get(0));
+                WaitHelper.waitForPageLoad();
+                WaitHelper.waitForJStoLoad();
             }
         }catch (Exception e){
             throw new Exception("ERROR: While Selecting the Product");

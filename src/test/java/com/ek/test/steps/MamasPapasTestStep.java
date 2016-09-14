@@ -90,6 +90,7 @@ public class MamasPapasTestStep {
     @Then("^I should able to see the Search Result page along with matching results$")
     public void i_should_able_to_see_the_Search_Result_page_along_with_matching_results() throws Throwable {
         WaitHelper.waitForPageLoad();
+        WaitHelper.waitForJStoLoad();
         Assert.assertTrue("ERROR: Search Result Page NOT available",searchPage.isSearchResultPageDisplayed());
         Assert.assertTrue("ERROR: No results found for a valid Search criteria",searchPage.getSearchResultCount() > 0);
         ScenarioHook.takeScreenshot();
